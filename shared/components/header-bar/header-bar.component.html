@@ -1,0 +1,59 @@
+<div class="header-bar-container">
+  <div class="box" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="logo">
+      <a href="#">Logo</a>
+    </div>
+    <div
+      class="dropdown-area"
+      fxLayout="row"
+      fxLayoutAlign="center center"
+    >
+      <button class="btn btn-outline-black mr-2">Home</button>
+
+      <div ngbDropdown #shopDrop="ngbDropdown">
+        <button
+          class="btn btn-outline-black mr-2"
+          id="dropdownManual"
+          ngbDropdownAnchor
+          (focus)="shopDrop.open()"
+        >
+          Shop
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual">
+          <button ngbDropdownItem>Shop CateGory</button>
+          <button ngbDropdownItem>Product detail</button>
+        </div>
+      </div>
+
+      <div ngbDropdown #pageDrop="ngbDropdown">
+        <button
+          class="btn btn-outline-black mr-2"
+          id="dropdownManual"
+          ngbDropdownAnchor
+          (focus)="pageDrop.open()"
+        >
+          Pages
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual">
+          <button ngbDropdownItem>Login</button>
+          <button ngbDropdownItem>Shopping cart</button>
+          <button ngbDropdownItem>Confirmation</button>
+          <button ngbDropdownItem>Abort Me</button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="login"
+      fxLayout="row"
+      fxLayoutAlign="center center"
+      fxLayoutGap="30px"
+    >
+      <a class="loginBtn" href="#">
+        <i class="material-icons"> login </i>
+      </a>
+      <button class="searchBtn">
+        <i class="material-icons"> search </i>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.header-bar-container {
+  width: 100%;
+  background-color: #ffffff;
+  height: 80px;
+  .box {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    .logo {
+      width: 10%;
+      height: 100%;
+      a {
+        font-size: 46px;
+        line-height: 80px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        color: cornflowerblue;
+      }
+    }
+    .dropdown-area {
+      width: 50%;
+      height: 100%;
+    }
+    .login {
+      width: 10%;
+      height: 100%;
+      .loginBtn {
+        color: #000;
+      }
+      .searchBtn {
+        border: none;
+        background-color: #fff;
+      }
+    }
+  }
+}
