@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { newArrivalProducts, NewArrivalSelectEnum, ProductGroupEnum } from './home-page.model';
 
 @Component({
   selector: 'app-home-page',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  newProducts: newArrivalProducts[] = [];
+  filterProducts: newArrivalProducts[] = [];
+  productCategoriesUrlList = [
+    { name: 'Man', url: '../../../assets/img/man.png'},
+    { name: 'Female', url: '../../../assets/img/female.png' },
+    { name: 'Accessories', url: '../../../assets/img/accessories.png' }
+  ];
 
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get('http://localhost:3000').subscribe((res: any) => {
+      this.newProducts = res.newArrival;
+    });
+  }
+
+  onTabGroupSelectChange($event: any) {
+    this.filterProducts = this.newProducts.filter((product: newArrivalProducts) => product.group === $event.index);
   }
 
 }

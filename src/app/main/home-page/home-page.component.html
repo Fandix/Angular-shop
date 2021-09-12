@@ -11,3 +11,23 @@
         </div>
     </div>
 </div>
+
+<div class="main">
+    <div class="classification" fxLayout="row" fxLayoutAlign="center center">
+        <ng-container *ngFor="let categories of productCategoriesUrlList">
+            <app-product-categories [categories]="categories"></app-product-categories>
+        </ng-container>
+    </div>
+</div>
+
+
+
+<div class="new-arrival">
+    <h1 class="new-arrival-title">New Arrival</h1>
+    <mat-tab-group mat-align-tabs="end" (selectedTabChange)="onTabGroupSelectChange($event)">
+        <mat-tab label="All">Content 1</mat-tab>
+        <mat-tab label="Men">Content 2</mat-tab>
+        <mat-tab label="Women">Content 3</mat-tab>
+        <mat-tab label="Shoes">Content 4</mat-tab>
+      </mat-tab-group>
+</div>

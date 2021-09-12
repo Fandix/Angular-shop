@@ -1,0 +1,26 @@
+.container {
+    .pic {
+        overflow:hidden;
+        position: relative;
+        img {
+            width: 100%;
+            transform:scale(1,1);
+            transition: all 1s ease-out;
+        }
+        img:hover {
+            transform:scale(1.2,1.2);
+        }
+        .toCategoriesBtn {
+            position: absolute;
+            top:50%;
+            left: 30%;
+            button {
+                width: 200px;
+                height: 80px;
+                font-size: 18px;
+                text-align: center;
+                line-height: 80px;
+            }
+        }
+    }
+}
