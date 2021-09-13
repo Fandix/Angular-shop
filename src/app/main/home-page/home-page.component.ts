@@ -9,7 +9,6 @@ import { newArrivalProducts, NewArrivalSelectEnum, ProductGroupEnum } from './ho
 })
 export class HomePageComponent implements OnInit {
   newProducts: newArrivalProducts[] = [];
-  filterProducts: newArrivalProducts[] = [];
   productCategoriesUrlList = [
     { name: 'Man', url: '../../../assets/img/man.png'},
     { name: 'Female', url: '../../../assets/img/female.png' },
@@ -22,11 +21,12 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.http.get('http://localhost:3000').subscribe((res: any) => {
       this.newProducts = res.newArrival;
+      console.log(this.newProducts);
     });
   }
 
-  onTabGroupSelectChange($event: any) {
-    this.filterProducts = this.newProducts.filter((product: newArrivalProducts) => product.group === $event.index);
+  getNewArrivalProducts(index: number) {
+    return this.newProducts.filter((product: newArrivalProducts) => product.group === index);
   }
 
 }

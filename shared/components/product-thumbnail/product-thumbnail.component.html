@@ -1,0 +1,15 @@
+<div class="content">
+  <div *ngFor="let product of productsList" class="product">
+    <img src={{product.img}} alt="product">
+    <div class="info">
+        <span class="name">{{product.name}}</span>
+        <div class="startList">
+            <div *ngFor="let start of getStartCount(product)" >
+                <i class="material-icons"> start </i>
+            </div>
+        </div>
+        
+        <span class="price">${{product.price}}</span>
+    </div>
+  </div>
+</div>

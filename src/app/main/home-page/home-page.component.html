@@ -1,33 +1,51 @@
 <div class="home-page-container">
-    <app-header-bar></app-header-bar>
-    <div class="slogan" fxLayout="column" fxLayoutAlign="center start">
-        <div class="text">
-            <div class="small">Winter Fashion</div>
-            <div class="large">Fashion</div>
-            <div class="large">Collection 2021</div>
-        </div>
-        <div class="btn">
-            <button mat-stroked-button>Shop Now</button>
-        </div>
+  <app-header-bar></app-header-bar>
+  <div class="slogan" fxLayout="column" fxLayoutAlign="center start">
+    <div class="text">
+      <div class="small">Winter Fashion</div>
+      <div class="large">Fashion</div>
+      <div class="large">Collection 2021</div>
     </div>
+    <div class="btn">
+      <button mat-stroked-button>Shop Now</button>
+    </div>
+  </div>
 </div>
 
 <div class="main">
-    <div class="classification" fxLayout="row" fxLayoutAlign="center center">
-        <ng-container *ngFor="let categories of productCategoriesUrlList">
-            <app-product-categories [categories]="categories"></app-product-categories>
-        </ng-container>
-    </div>
+  <div class="classification" fxLayout="row" fxLayoutAlign="center center">
+    <ng-container *ngFor="let categories of productCategoriesUrlList">
+      <app-product-categories
+        [categories]="categories"
+      ></app-product-categories>
+    </ng-container>
+  </div>
 </div>
 
-
-
 <div class="new-arrival">
-    <h1 class="new-arrival-title">New Arrival</h1>
-    <mat-tab-group mat-align-tabs="end" (selectedTabChange)="onTabGroupSelectChange($event)">
-        <mat-tab label="All">Content 1</mat-tab>
-        <mat-tab label="Men">Content 2</mat-tab>
-        <mat-tab label="Women">Content 3</mat-tab>
-        <mat-tab label="Shoes">Content 4</mat-tab>
-      </mat-tab-group>
+  <h1 class="new-arrival-title">New Arrival</h1>
+  <ng-container *ngIf="newProducts.length !== 0">
+    <mat-tab-group mat-align-tabs="end">
+      <mat-tab label="All">
+        <app-product-thumbnail
+          [productsList]="newProducts"
+        ></app-product-thumbnail>
+      </mat-tab>
+      <mat-tab label="Men">
+        <app-product-thumbnail
+          [productsList]="getNewArrivalProducts(1)"
+        ></app-product-thumbnail>
+      </mat-tab>
+      <mat-tab label="Women">
+        <app-product-thumbnail
+          [productsList]="getNewArrivalProducts(2)"
+        ></app-product-thumbnail>
+      </mat-tab>
+      <mat-tab label="Shoes">
+        <app-product-thumbnail
+          [productsList]="getNewArrivalProducts(3)"
+        ></app-product-thumbnail>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-container>
 </div>
