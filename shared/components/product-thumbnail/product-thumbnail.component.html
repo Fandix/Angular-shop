@@ -1,15 +1,27 @@
 <div class="content">
   <div *ngFor="let product of productsList" class="product">
-    <img src={{product.img}} alt="product">
+    <img src="{{ product.img }}" alt="product" />
     <div class="info">
-        <span class="name">{{product.name}}</span>
-        <div class="startList">
-            <div *ngFor="let start of getStartCount(product)" >
-                <i class="material-icons"> start </i>
-            </div>
+      <span class="name">{{ product.name }}</span>
+      <div class="startList">
+        <div *ngFor="let start of getStartCount(product)">
+          <i class="material-icons"> start </i>
         </div>
-        
-        <span class="price">${{product.price}}</span>
+      </div>
+      <span class="price">${{ product.price }}</span>
+      <div
+        class="option-btn"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        fxLayoutGap="30px"
+      >
+        <button class="btn">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button class="btn">
+          <mat-icon class="goto">label_important</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
 </div>

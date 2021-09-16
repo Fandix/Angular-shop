@@ -1,78 +1,145 @@
 .home-page-container {
-    width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    animation: slide 10s infinite;
-    .slogan {
-        width: 40%;
-        height: calc(100% - 80px);
-        margin-left: 20%;
-        .text {
-            .small {
-                font-size: 30px;
-            }
-            .large {
-                font-size: 80px;
-            }
-        }
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: slide 10s infinite;
+  .slogan {
+    width: 40%;
+    height: calc(100% - 80px);
+    margin-left: 20%;
+    .text {
+      .small {
+        font-size: 30px;
+      }
+      .large {
+        font-size: 80px;
+      }
     }
-    .btn {
-        width: 250px;
-        height: 100px;
-        button {
-            width: 100%;
-            height: 100%;
-            font-size: 24px;
-        }
+  }
+  .btn {
+    width: 250px;
+    height: 100px;
+    button {
+      width: 100%;
+      height: 100%;
+      font-size: 24px;
     }
+  }
 }
 
 @keyframes slide {
-    0% {
-        background-image: url('../../../assets/img/home-page\ img.jpeg');
-    }
-    20% {
-        background-image: url('../../../assets/img/home-page\ img.jpeg');
-    }
-    20.1% {
-        background-image: url('../../../assets/img/home-page\ img-2.jpeg');
-    }
-    40.1% {
-        background-image: url('../../../assets/img/home-page\ img-2.jpeg');
-    }
-    60% {
-        background-image: url('../../../assets/img/home-page\ img3.jpeg');
-    }
-    60.1% {
-        background-image: url('../../../assets/img/home-page\ img3.jpeg');
-    }
-    80% {
-        background-image: url('../../../assets/img/home-page\ img-4.jpeg');
-    }
-    80.1% {
-        background-image: url('../../../assets/img/home-page\ img-4.jpeg');
-    }
-    100% {
-        background-image: url('../../../assets/img/home-page\ img5.jpeg');
-    }
+  0% {
+    background-image: url("../../../assets/img/home-page\ img.jpeg");
+  }
+  20% {
+    background-image: url("../../../assets/img/home-page\ img.jpeg");
+  }
+  20.1% {
+    background-image: url("../../../assets/img/home-page\ img-2.jpeg");
+  }
+  40.1% {
+    background-image: url("../../../assets/img/home-page\ img-2.jpeg");
+  }
+  60% {
+    background-image: url("../../../assets/img/home-page\ img3.jpeg");
+  }
+  60.1% {
+    background-image: url("../../../assets/img/home-page\ img3.jpeg");
+  }
+  80% {
+    background-image: url("../../../assets/img/home-page\ img-4.jpeg");
+  }
+  80.1% {
+    background-image: url("../../../assets/img/home-page\ img-4.jpeg");
+  }
+  100% {
+    background-image: url("../../../assets/img/home-page\ img5.jpeg");
+  }
 }
 
 .main {
-    margin-top: 30px;
+  margin-top: 30px;
+  width: 100%;
+  .classification {
     width: 100%;
-    .classification {
-        width: 100%;
-        height: 800px;
-    }
+    height: 800px;
+  }
 }
 
 .new-arrival {
-    width: 80%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -45px;
+  .new-arrival-title {
+    margin-bottom: -45px;
+  }
+}
+
+.footBar {
+  height: 350px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  .foot-content {
+    width: 60%;
+    height: 80%;
+    margin-top: 20px;
     margin: 0 auto;
-    margin-top: -45px;
-    .new-arrival-title {
-        margin-bottom: -45px;
+    border-bottom: rgba($color: #d3d3d3, $alpha: 0.2) 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .category,
+    .aboutMe,
+    .social {
+      width: 30%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h4 {
+        color: white;
+        margin-bottom: 40px;
+      }
     }
+    .category,
+    .aboutMe {
+      span {
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+      }
+      span:hover {
+        color: cornflowerblue;
+      }
+    }
+    .social {
+      .icon-content {
+        display: flex;
+        margin-bottom: 30px;
+        .icon {
+          margin-right: 20px;
+          width: 35px;
+          height: 35px;
+          a {
+            color: #d3d3d3;
+            svg {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+  .point {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+  }
 }

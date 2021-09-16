@@ -21,7 +21,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.http.get('http://localhost:3000').subscribe((res: any) => {
       this.newProducts = res.newArrival;
-      console.log(this.newProducts);
     });
   }
 
